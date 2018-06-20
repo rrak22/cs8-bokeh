@@ -1,5 +1,6 @@
 class Edge:
-    def __init__(self, destination):
+    def __init__(self, origin, destination):
+        self.origin = origin
         self.destination = destination
 
 class Vertex:
@@ -15,9 +16,10 @@ class Graph:
 
     def debug_create_test_data(self):
         debug_vertex_1 = Vertex('t1', x=40, y=40)
+        print(debug_vertex_1.pos['x'])
         debug_vertex_2 = Vertex('t2', x=140, y=140)
 
-        debug_edge_1 = Edge(debug_vertex_2)
+        debug_edge_1 = Edge(debug_vertex_1, debug_vertex_2)
         debug_vertex_1.edges.append(debug_edge_1)
 
         self.vertexes.extend([debug_vertex_1, debug_vertex_2])
